@@ -184,10 +184,17 @@
   &.selected,
   &.selected:first-child,
   &.selected:last-child {
-    color: @button-text-color-selected;
+    color: @button-text-color-selected !important;
     border: 1px solid @button-border-color-selected;
   }
   &.selected + .btn {
     border-left-color: @button-border-color-selected;
   }
+}
+
+a.icon, button.icon {
+  color:@text-color;
+}
+a.icon:hover, button.icon:hover {
+  color: @text-color;
 }

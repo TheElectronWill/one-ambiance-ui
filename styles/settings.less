@@ -16,10 +16,6 @@
 
 	// Menu ------------------------------
 
-	select.form-control {
-		
-	}
-
 	.config-menu {
 		position: relative;
 		min-width: @ui-size * 15;
@@ -83,12 +79,18 @@
 		color: @text-color;
 	}
 
+	.sub-section .sub-section-heading:hover:after {
+		color: @base-accent-color;
+	}
+
 	.sub-section-heading.icon:before,
 	.section-heading.icon:before {
 		margin-right: @ui-padding-icon;
 	}
 
-
+	.package-readme h1, .package-readme h2, .package-readme h3, .package-readme h4 {
+		color: @text-color;
+	}
 
 	// Cards ------------------------------
 
@@ -119,12 +121,33 @@
 		padding-bottom: 0;
 	}
 
+	option:hover, option:focus {
+		background-color: @background-color-selected;
+		color: @text-color-selected;
+	}
+
 	.update-all-button {
 		font-size: .75em;
 	}
 
 	.search-container .btn {
 		font-size: @ui-input-size;
+	}
+
+	input[type="checkbox"]:checked,
+	input[type="checkbox"]:active {
+		background-color: @base-accent-color
+	}
+
+	.keybinding-panel .is-user {
+		color: @text-color-warning;
+		background-color: @base-background-color;
+	}
+
+	option:hover,
+	option:focus {
+		background-color: @background-color-selected;
+		color: @text-color-selected;
 	}
 
 }
