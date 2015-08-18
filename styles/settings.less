@@ -12,19 +12,21 @@
 @ms_1: @ui-size * 0.889;
 @ms_2: @ui-size * 0.790;
 
-
-
 .settings-view {
 
 	// Menu ------------------------------
+
+	select.form-control {
+		
+	}
 
 	.config-menu {
 		position: relative;
 		min-width: @ui-size * 15;
 		max-width: @ui-size * 20;
 		border-width: 0 1px 0 0;
-		border-image: linear-gradient(@level-2-color 10px, @base-border-color 200px) 0 1 0 0 stretch;
-		background: @level-2-color;
+		//border-image: linear-gradient(@app-background-color 10px, @base-border-color 200px) 0 1 0 0 stretch;
+		background: @app-background-color;
 
 		.btn {
 			white-space: initial;
@@ -49,7 +51,7 @@
 	// Sections ------------------------------
 
 	& > .panels {
-		background-color: @level-2-color;
+		background-color: @app-background-color;
 	}
 
 	.section-container {
@@ -74,6 +76,11 @@
 
 	.section .section-heading {
 		margin-bottom: @ui-padding/1.5;
+		color: @text-color;
+	}
+
+	.sub-section .sub-section-heading {
+		color: @text-color;
 	}
 
 	.sub-section-heading.icon:before,
@@ -95,11 +102,10 @@
 		}
 	}
 
-
 	// Components ------------------------------
 
 	.icon::before {
-		color: @text-color-subtle;
+		color: @text-color;//-subtle;
 	}
 
 	.editor-container {

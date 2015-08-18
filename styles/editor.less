@@ -10,7 +10,7 @@ atom-text-editor[mini] {
   max-height: none;
   padding-left: @ui-padding/3;
   border-radius: @component-border-radius;
-  color: @text-color-highlight;
+  color: @text-color;
   border: 1px solid @input-border-color;
   background-color: @input-background-color;
 
@@ -20,10 +20,11 @@ atom-text-editor[mini] {
       color: @text-color-subtle;
     }
     .selection .region {
-      background-color: @input-selection-color;
+      background-color: @background-color-selected;
+      color: @text-color-selected;
     }
     .cursor {
-      border-color: @base-accent-color;
+      border-color: @text-color;
       border-width: 2px;
     }
   }
@@ -33,7 +34,8 @@ atom-text-editor[mini] {
     .focus();
     background-color: @input-background-color-focus;
     .selection .region {
-      background-color: @input-selection-color-focus;
+      background-color: @background-color-selected;
+      coloor: @text-color-selected;
     }
   }
 }

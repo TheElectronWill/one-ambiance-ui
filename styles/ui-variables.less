@@ -20,75 +20,79 @@
 @ui-bg:     hsl(@ui-hue, @ui-saturation, @ui-lightness); // normalized @syntax-background-color
 @ui-border: darken(@base-background-color, 16%);
 
-
-
+// Custom ambiance -------------
+@white-color: hsl(0, 0%, 100%);
+@ubuntu-white-color: hsl(0, 0%, 98%);
+@ubuntu-border-color: hsl(30, 5%, 78%);
+@black-color: hsl(0, 0%, 0%);
+@ubuntu-orange-color: hsl(17, 85%, 61%);
+@dark-bg-color: hsl(20, 6%, 90%);
+@darker-bg-color: hsl(30, 6%, 81%);
+@light-bg-color: hsl(30, 7%, 95%);
+@lighter-bg-color: hsl(0, 6%, 97%);
 
 // Official variables
 // These variables must be defined in every theme
 // Source: https://github.com/atom/atom/blob/master/static/variables/ui-variables.less
 // ----------------------------------------------
 
-
 // Text -----------------
-@text-color:            @ui-fg;
+@text-color:            @black-color;
 @text-color-subtle:     lighten(@text-color, 32%);
-@text-color-highlight:  darken(@text-color, 10%);
-@text-color-selected:   darken(@text-color-highlight, 10%);
+@text-color-highlight:  @white-color;
+@text-color-selected:   @white-color;
 
-@text-color-info:    hsl(208, 100%, 54%);
-@text-color-success: hsl(132,  60%, 44%);
-@text-color-warning: hsl( 37,  90%, 44%);
-@text-color-error:   hsl(  0,  90%, 56%);
-
+@text-color-info:    @ubuntu-orange-color;//sl(208, 100%, 54%); blue
+@text-color-success: hsl(132,  60%, 44%);//green ?? TODO check
+@text-color-warning: hsl( 37,  90%, 44%);//orange ??
+@text-color-error:   hsl(  0,  90%, 56%);//red ??
 
 // Background -----------------
-@background-color-info:    hsl(208, 100%, 56%);
+@background-color-info:    @ubuntu-orange-color;//hsl(208, 100%, 56%);
 @background-color-success: hsl(132,  48%, 48%);
 @background-color-warning: hsl( 40,  60%, 52%);
 @background-color-error:   hsl(  0,  60%, 56%);
 
-@background-color-highlight: hsla(@ui-hue, @ui-saturation, 50%,.08);
-@background-color-selected:  hsla(@ui-hue, @ui-saturation, 50%,.16);
+@background-color-highlight: @ubuntu-orange-color;
+@background-color-selected:  @ubuntu-orange-color;
 
-@app-background-color: @level-3-color;
-
+@app-background-color: @light-bg-color;
 
 // Base -----------------
-@base-background-color: @ui-bg;
-@base-border-color:     @ui-border;
-
+@base-background-color: @light-bg-color;
+@base-border-color:     @ubuntu-border-color;
 
 // Components -----------------
 @pane-item-background-color:       @base-background-color;
 @pane-item-border-color:           @base-border-color;
 
-@input-background-color:           @level-1-color;
+@input-background-color:           @ubuntu-white-color;
 @input-border-color:               @base-border-color;
 
-@tool-panel-background-color:      @level-3-color;
+@tool-panel-background-color:      @app-background-color;
 @tool-panel-border-color:          @base-border-color;
 
 @inset-panel-background-color:     lighten(@level-2-color, 4%);
 @inset-panel-border-color:         fadeout(@base-border-color, 15%);
 
-@panel-heading-background-color:   @level-2-color;
+@panel-heading-background-color:   @app-background-color;
 @panel-heading-border-color:       @base-border-color;
 
-@overlay-background-color:         @level-2-color;
+@overlay-background-color:         @app-background-color;
 @overlay-border-color:             @base-border-color;
 
-@button-background-color:          @level-1-color;
+@button-background-color:          @ubuntu-white-color;
 @button-background-color-hover:    darken(@button-background-color, 4%);
-@button-background-color-selected: lighten(@base-accent-color, 4%);
+@button-background-color-selected: @ubuntu-white-color;//lighten(@base-accent-color, 4%);
 @button-border-color:              @base-border-color;
 
-@tab-bar-background-color:         @level-3-color;
+@tab-bar-background-color:         @app-background-color;
 @tab-bar-border-color:             @base-border-color;
-@tab-background-color:             @level-3-color;
-@tab-background-color-active:      @level-2-color;
+@tab-background-color:             @app-background-color;
+@tab-background-color-active:      @ubuntu-white-color;
 @tab-border-color:                 @base-border-color;
 
-@tree-view-background-color:       @level-3-color;
+@tree-view-background-color:       @dark-bg-color;
 @tree-view-border-color:           @base-border-color;
 
 @ui-site-color-1: hsl(132,  48%, 48%); // green
@@ -113,11 +117,7 @@
 
 
 // Font -----------------
-@font-family: 'SF UI Text', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
-
-
-
-
+@font-family: Ubuntu, sans-serif;
 
 // Custom variables
 // These variables are only used in this theme
@@ -134,54 +134,50 @@
 @text-color-removed:  @text-color-error;    // red
 @text-color-renamed:  @text-color-info;     // blue
 
-
 // Background (Custom) -----------------
-@level-1-color: lighten(@base-background-color, 4%);
-@level-2-color: @base-background-color;
-@level-3-color: darken(@base-background-color, 8%);
-
+@level-1-color: lighten(@base-background-color, 4%); //light
+@level-2-color: @base-background-color;              //normal
+@level-3-color: darken(@base-background-color, 8%);  //dark
 
 // Base (Custom) -----------------
-@base-accent-color: hsl(@ui-hue, 64%, 56%);
-
+@base-accent-color: @ubuntu-orange-color;//hsl(@ui-hue, 64%, 56%);
 
 // Components (Custom) -----------------
 @badge-background-color:            fadein(@background-color-highlight, 8%);
 
-@button-text-color-selected:        contrast(@button-background-color-selected, hsl(@ui-hue,100%,100%), hsl(@ui-hue,100%,12%), 40% );
+@button-text-color-selected:        @text-color;
 @button-border-color-selected:      @base-accent-color;
+@button-border-color:               @ubuntu-border-color;
 
 @checkbox-background-color:         fade(@base-accent-color, 33%);
 
-@input-background-color-focus:      hsl(@ui-hue, 100%, 96%);
+@input-background-color-focus:      @ubuntu-white-color;//hsl(@ui-hue, 100%, 96%);
 @input-selection-color:             @background-color-selected;
 @input-selection-color-focus:       fadein(@background-color-selected, 6%);
 
 @key-binding-border-color:          @base-border-color;
-@key-binding-background-color:      @level-2-color;
+@key-binding-background-color:      @ubuntu-white-color;
 
 @overlay-backdrop-color:            hsla(@ui-hue,@ui-saturation,5%,.5);
 
-@progress-background-color:         @base-accent-color;
+@progress-background-color:         @ubuntu-orange-color;
 
-@scrollbar-color:                   darken(@level-3-color, 14%);
-@scrollbar-background-color:        @level-3-color; // replaced `transparent` with a solid color to test https://github.com/atom/one-light-ui/issues/4
-@scrollbar-color-editor:            contrast(@ui-syntax-color, darken(@ui-syntax-color, 14%), lighten(@ui-syntax-color, 9%) );
+@scrollbar-color:                   @ubuntu-orange-color;//darken(@level-3-color, 14%);
+@scrollbar-background-color:        transparent;
+@scrollbar-color-editor:            @ubuntu-orange-color;//contrast(@ui-syntax-color, darken(@ui-syntax-color, 14%), lighten(@ui-syntax-color, 9%) );
 @scrollbar-background-color-editor: @ui-syntax-color;
 
-@tab-text-color:                    @text-color-subtle;
-@tab-text-color-active:             @text-color-highlight;
-@tab-text-color-editor:             contrast(@ui-syntax-color, lighten(@ui-syntax-color, 70%), @text-color-highlight );
+@tab-text-color:                    @text-color;
+@tab-text-color-active:             @text-color;
+@tab-text-color-editor:             contrast(@ui-syntax-color, lighten(@ui-syntax-color, 70%), @text-color );
 @tab-background-color-editor:       @ui-syntax-color;
 
-@tooltip-background-color:          @base-accent-color;
-@tooltip-text-color:                contrast(@tooltip-background-color, hsl(@ui-hue,100%,100%), hsl(@ui-hue,100%,12%), 40% );
+@tooltip-background-color:          hsl(60, 76%, 84%);//@base-accent-color;
+@tooltip-text-color:                @text-color;
 @tooltip-text-key-color:            @tooltip-background-color;
 @tooltip-background-key-color:      @tooltip-text-color;
 
-
 // Sizes (Custom) -----------------
-
 @ui-size:                 1em;
 @ui-input-size:           @ui-size*1.15;
 @ui-padding:              @ui-size*1.5;
@@ -189,9 +185,6 @@
 @ui-padding-icon:         @ui-padding/3.3;
 @ui-line-height:          @ui-size*2;
 @ui-tab-height:           @ui-padding*2;
-
-
-
 
 
 // Packages variables
@@ -208,7 +201,6 @@
 @markdown-preview-hr-color: darken(@base-background-color, 10%);
 @markdown-preview-code-color: lighten(@text-color, 10%);
 @markdown-preview-code-background-color: darken(@base-background-color, 1%);
-
 
 
 // Debug

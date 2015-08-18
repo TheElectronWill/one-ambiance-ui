@@ -1,14 +1,16 @@
 {
-  "name": "one-light-ui",
+  "name": "one-ambiance-ui",
   "theme": "ui",
-  "version": "1.0.3",
-  "description": "Atom One light UI theme",
+  "version": "1.0.7",
+  "description": "One Ambiance UI theme",
   "keywords": [
+    "ambiance",
+    "ubuntu",
     "light",
     "adaptive",
     "ui"
   ],
-  "repository": "https://github.com/atom/one-light-ui.git",
+  "repository": "https://github.com/atom/one-ambiance-ui.git",
   "license": "MIT",
   "main": "lib/main",
   "engines": {

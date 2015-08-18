@@ -1,5 +1,6 @@
 
 @btn-border: 1px solid @button-border-color;
+@btn-orange-border: 1px solid @base-accent-color;
 @btn-padding: 0 @ui-size/1.25;
 
 // Mixins -----------------------
@@ -17,7 +18,37 @@
   }
   &:focus,
   &:hover {
-    color: @text-color-highlight;
+    color: @text-color;//avoids white on grey
+    background-image: linear-gradient(lighten(@hover-color, 2%), @hover-color);
+  }
+  &:active {
+    background: darken(@color, 4%);
+    box-shadow: none;
+  }
+  &.selected {
+    background: @selected-color;
+    border: @base-accent-color;
+  }
+  &.selected:focus,
+  &.selected:hover {
+    background: lighten(@selected-color, 2%);
+  }
+}
+
+.btn-hilight (@color, @hover-color, @selected-color, @text-color) {
+  color: @text-color;
+  text-shadow: none;
+  border: 3px solid @base-accent-color;
+  background-color: @color;
+  background-image: linear-gradient(lighten(@color, 2%), @color);
+
+  &:focus {
+    //.focus(); // disabled for now, since :focus styles stay even after releasing mouse.
+    outline: none;
+  }
+  &:focus,
+  &:hover {
+    color: @text-color;//avoids white on grey
     background-image: linear-gradient(lighten(@hover-color, 2%), @hover-color);
   }
   &:active {
@@ -74,7 +105,7 @@
 }
 
 .btn.btn-primary {
-  .btn-variant(@base-accent-color);
+  .btn-hilight(@button-background-color, @button-background-color-hover, @button-background-color-selected, @text-color);
 }
 .btn.btn-info {
   .btn-variant(@background-color-info);

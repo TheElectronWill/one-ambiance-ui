@@ -8,6 +8,7 @@ html {
 
 atom-workspace {
 	background-color: @app-background-color;
+	color: @text-color;
 
 	atom-panel-container.left:empty {
 		padding-left: @ui-padding-pane;
@@ -16,14 +17,18 @@ atom-workspace {
 }
 
 .platform-darwin {
-	atom-workspace.theme-one-light-ui {
+	atom-workspace.theme-one-ambiance-ui {
 	  border-top: 1px solid darken(@base-border-color, 20%);
 	}
-	&.is-blurred atom-workspace.theme-one-light-ui {
+	&.is-blurred atom-workspace.theme-one-ambiance-ui {
 	  border-top-color: @base-border-color;
 	}
 }
 
+// About -----------------------------------------
+.about .about-header .about-logo {
+	color: @ubuntu-border-color;
+}
 
 // Scrollbars ------------------------------------
 
@@ -74,7 +79,6 @@ atom-workspace {
 	}
 }
 
-// TODO: Move to a better place, not sure where it gets used
 .caret {
   border-top: 5px solid #fff;
   margin-top: -1px;
