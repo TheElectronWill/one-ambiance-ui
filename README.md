@@ -1,3 +1,4 @@
 ## One ambiance UI theme
 
-This is a fork of the one light ui theme. It aims to provide an ubuntu ambiance style to the atom editor.
+An Ubuntu ambiance style for your atom UI! 
+This fork of the one light ui theme aims to provide a user interface similar to the ambiance theme used in the Ubuntu Linux Distribution.
