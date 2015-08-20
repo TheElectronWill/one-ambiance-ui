@@ -1,8 +1,8 @@
 {
   "name": "one-ambiance-ui",
   "theme": "ui",
-  "version": "1.0.7",
-  "description": "One Ambiance UI theme",
+  "version": "1.0.0",
+  "description": "One Ambiance UI theme, based on Ubuntu's ambiance ui. ",
   "keywords": [
     "ambiance",
     "ubuntu",
